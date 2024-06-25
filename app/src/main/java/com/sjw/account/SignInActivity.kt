@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -27,23 +26,15 @@ class SignInActivity : AppCompatActivity() {
         val id = findViewById<EditText>(R.id.in_input_id)
         val pw = findViewById<EditText>(R.id.in_input_pw)
 
-        val img = findViewById<ImageView>(R.id.in_img)
-
         signInBtn.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             when {
-                id.text.toString().isEmpty() -> {
+                id.text.toString().isEmpty() ->
                     Toast.makeText(this, "아이디를 입력해주세요", Toast.LENGTH_SHORT).show()
-                    img.setImageResource(R.drawable.error_img)
-                }
-
-                pw.text.toString().isEmpty() -> {
+                pw.text.toString().isEmpty() ->
                     Toast.makeText(this, "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show()
-                    img.setImageResource(R.drawable.error_img)
-                }
                 else -> {
                     Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                    img.setImageResource(R.drawable.sign_in_img)
                     intent.putExtra("id", id.toString())
                     startActivity(intent)
                 }
