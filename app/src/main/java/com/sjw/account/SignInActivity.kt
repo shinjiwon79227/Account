@@ -35,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
                     Toast.makeText(this, "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show()
                 else -> {
                     Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                    intent.putExtra("id", id.text.toString())
+                    intent.putExtra("id", id.toString())
                     startActivity(intent)
                 }
             }
