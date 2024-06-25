@@ -71,7 +71,7 @@
         android:id="@+id/up_input_pw"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:hint="@string/pw_hint" />
 
     <Button
@@ -82,6 +82,6 @@
         app:layout_constraintTop_toBottomOf="@id/up_name_id_pw_flow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
