@@ -1,5 +1,6 @@
 package com.sjw.account
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -32,6 +33,10 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
                 else -> {
                     Toast.makeText(this, "회원가입 성공!\n당신은 이제 김밥 월드 회원~", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, SignInActivity::class.java)
+                    intent.putExtra("id", id.text.toString())
+                    intent.putExtra("pw", pw.text.toString())
+                    setResult(RESULT_OK, intent)
                     finish()
                 }
             }

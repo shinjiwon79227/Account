@@ -6,11 +6,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SignInActivity : AppCompatActivity() {
+    lateinit var resultLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,6 +28,13 @@ class SignInActivity : AppCompatActivity() {
         val signUpBtn = findViewById<Button>(R.id.in_sign_up_btn)
         val id = findViewById<EditText>(R.id.in_input_id)
         val pw = findViewById<EditText>(R.id.in_input_pw)
+
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                id.setText(result.data?.getStringExtra("id") ?: "")
+                pw.setText(result.data?.getStringExtra("pw") ?: "")
+            }
+        }
 
         signInBtn.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
