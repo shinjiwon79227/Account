@@ -48,7 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
                 else -> {
-                    Toast.makeText(this, "회원가입 성공!\n당신은 이제 김밥 월드 회원~", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "회원가입 성공!\n당신은 이제 김사모 회원~", Toast.LENGTH_SHORT).show()
                     finish()
                 }
             }
