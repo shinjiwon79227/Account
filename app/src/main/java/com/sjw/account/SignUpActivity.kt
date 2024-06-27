@@ -1,6 +1,5 @@
 package com.sjw.account
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -49,11 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
                 else -> {
-                    Toast.makeText(this, "회원가입 성공!\n당신은 이제 김밥 월드 회원~", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, SignInActivity::class.java)
-                    intent.putExtra("id", id.text.toString())
-                    intent.putExtra("pw", pw.text.toString())
-                    setResult(RESULT_OK, intent)
+                    Toast.makeText(this, "회원가입 성공!\n당신은 이제 김사모 회원~", Toast.LENGTH_SHORT).show()
                     finish()
                 }
             }

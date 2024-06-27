@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/up_img"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="260dp"
         android:src="@drawable/sign_up_img"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
