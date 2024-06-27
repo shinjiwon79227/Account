@@ -36,13 +36,18 @@ class SignInActivity : AppCompatActivity() {
         signInBtn.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             when {
-                id.text.toString().isEmpty() ->
+                id.text.toString().isEmpty() -> {
                     Toast.makeText(this, "아이디를 입력해주세요", Toast.LENGTH_SHORT).show()
-                    img.set(R.drawable.error_img)
-                pw.text.toString().isEmpty() ->
+                    img.setImageResource(R.drawable.error_img)
+                }
+
+                pw.text.toString().isEmpty() -> {
                     Toast.makeText(this, "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show()
+                    img.setImageResource(R.drawable.error_img)
+                }
                 else -> {
                     Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
+                    img.setImageResource(R.drawable.sign_in_logo)
                     intent.putExtra("id", id.toString())
                     startActivity(intent)
                 }
