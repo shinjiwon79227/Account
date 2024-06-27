@@ -5,18 +5,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".SignUpActivity"
+    android:background="@drawable/rainbow_bg">
 
     <ImageView
         android:id="@+id/up_img"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/kimbap2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/sign_up_img"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/up_name_id_pw_flow"
@@ -74,7 +74,7 @@
         android:inputType="textPassword"
         android:hint="@string/pw_hint" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/up_sign_up_btn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -82,6 +82,7 @@
         app:layout_constraintTop_toBottomOf="@id/up_name_id_pw_flow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_style"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
