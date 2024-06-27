@@ -14,8 +14,8 @@ import kotlin.random.Random
 
 class HomeActivity : AppCompatActivity() {
     val random = Random
-    val nameData = arrayListOf("말하는 감자","못말리는 짱구","김밥 <<< 레어닉","돈까스","신지원")
-    val ageData = arrayListOf("21","0","25","7","5")
+    val nameData = arrayListOf("아찔한 뒷태 김밥","CUTE 김밥","코코낸내 김밥","뭘 봐 김밥","응애 김밥")
+    val ageData = arrayListOf("1","2","3","4","999")
     val mbtiData = arrayListOf("ISTP","ENFJ","INTJ","INFP","ENFP")
     val imgSrcData = arrayListOf(
         R.drawable.grizzly,
@@ -33,7 +33,6 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
         val inputId = intent.getStringExtra("id")
-        Log.d("data", "$inputId")
 
         val id = findViewById<TextView>(R.id.home_id)
         val name = findViewById<TextView>(R.id.home_name)

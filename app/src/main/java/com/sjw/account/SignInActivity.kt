@@ -48,7 +48,7 @@ class SignInActivity : AppCompatActivity() {
                 else -> {
                     Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
                     img.setImageResource(R.drawable.sign_in_img)
-                    intent.putExtra("id", id.toString())
+                    intent.putExtra("id", id.text.toString())
                     startActivity(intent)
                 }
             }
