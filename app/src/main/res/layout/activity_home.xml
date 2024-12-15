@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:background="@drawable/rainbow_bg"               >
+
+    <include
+        layout="@layout/title"
+        android:id="@+id/home_title" />
+
+   <ImageView
+       android:id="@+id/home_img"
+       android:layout_width="300dp"
+       android:layout_height="200dp"
+       android:src="@drawable/home_img1"
+       android:scaleType="fitXY"
+       app:layout_constraintTop_toBottomOf="@id/home_title"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginTop="40dp"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/home_id_name_age_MBTI_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids=
+            "home_id,home_name,home_age,home_MBTI"
+        app:layout_constraintTop_toBottomOf="@id/home_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:flow_verticalGap="20dp"/>
+
+    <TextView
+        android:id="@+id/home_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/id"
+        android:textSize="@dimen/sub_title" />
+
+ <TextView
+        android:id="@+id/home_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/name"
+        android:textSize="@dimen/sub_title" />
+
+ <TextView
+        android:id="@+id/home_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/age"
+        android:textSize="@dimen/sub_title" />
+
+ <TextView
+        android:id="@+id/home_MBTI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/MBTI"
+        android:textSize="@dimen/sub_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/home_finish_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/home_id_name_age_MBTI_flow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        android:text="@string/finish"
+        android:background="@drawable/btn_style"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
